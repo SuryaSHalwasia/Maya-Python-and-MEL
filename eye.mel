@@ -1,0 +1,563 @@
+//PLEASE NOTE: If error `Cannot find procedure "assignCreatedShader".` just assign any object any material
+//This will create a reference in the scene of the procedure and the error won't occur again.
+
+// Delete the window if it already exists
+if (`window -ex EyeWindow` == true)
+	deleteUI EyeWindow;
+
+DeleteCreated(); //delete created eyes and materials
+
+//Create UI
+window -title "Eye Creator"  -rtf true -nde true  -w 490  -h 490  -s false  EyeWindow ;
+
+frameLayout -labelVisible false -marginWidth 20 -marginHeight 20;
+columnLayout -adjustableColumn true ColumnLayout ;
+
+//create the button for creating eyes
+$buttonCreateEyes = `button -label "Create Eyes"` ;
+separator -style "none" -h 60;
+
+//frame for changing distance and scale
+$distScalePropFrame = `frameLayout -labelVisible true -label "Adjust Distance and Scale" -collapsable true` ;
+separator -style "none" -h 10;
+
+//slider for X distance
+$sliderX = `floatSliderGrp -label "Inter Eyes Distance" -value 0
+                   -minValue -10 -maxValue 10 -w 500 -s 0.05 -field true -en false`;
+floatSliderGrp -edit -dc ("ChangeDistance " + $sliderX)  $sliderX;
+
+//slider for Scale
+separator -style "none" -h 10;
+$sliderScale = `floatSliderGrp -label "Eyes Scale" -value 1
+                   -minValue 0.01 -maxValue 10 -w 500 -s 0.05 -field true -en false`;
+
+floatSliderGrp -edit -dc ("ChangeScale " + $sliderScale)  $sliderScale;
+
+//slider for Y Distance
+separator -style "none" -h 10;
+$sliderY = `floatSliderGrp -label "Y Distance" -value 1
+                   -minValue -10 -maxValue 10 -w 500 -s 0.05 -field true -en false`;
+
+floatSliderGrp -edit -dc ("ChangeY " + $sliderY)  $sliderY;
+
+//slider for Z Distance
+separator -style "none" -h 10;
+$sliderZ = `floatSliderGrp -label "Z Distance" -value 1
+                   -minValue -10 -maxValue 10 -w 500 -s 0.05 -field true -en false`;
+
+floatSliderGrp -edit -dc ("ChangeZ " + $sliderZ)  $sliderZ;
+
+setParent .. ;
+separator -style "none" -h 20;
+
+//frame for changing color properties
+frameLayout -labelVisible true -label "Change Color Properties" -collapsable true;
+separator -style "none" -h 10;
+
+//color of Pupil
+rowColumnLayout -nc 3;
+
+$colorPupil =  `colorSliderGrp -label "Pupil Color" -rgb 0.022 0.008 0.004 -en false`  ;
+separator -style "none" -w 20;
+
+$buttonPupilColorClear = `button -label "Reset" -en false ` ;
+button -edit -command ( "ResetPupil " + $colorPupil) $buttonPupilColorClear;
+
+colorSliderGrp -edit -dc ("ChangePupilColor " + $colorPupil) $colorPupil ;
+setParent .. ;
+
+separator -style "none" -h 10;
+
+//color of Iris
+rowColumnLayout -nc 3;
+$colorIris =  `colorSliderGrp -label "Iris Color" -rgb 0.072 0.162 0.334 -en false`  ;
+
+separator -style "none" -w 10;
+$buttonIrisColorClear = `button -label "Reset" -en false ` ;
+
+button -edit -command ( "ResetIrisC " + $colorIris) $buttonIrisColorClear;
+colorSliderGrp -edit -dc ("ChangeIrisColor " + $colorIris) $colorIris ;
+
+setParent .. ;
+separator -style "none" -h 10;
+
+//color of IrisSpecular
+rowColumnLayout -nc 3;
+
+$colorIrisSpec =  `colorSliderGrp -label "Iris Specular Color" -rgb 0.130 0.292 0.602 -en false`  ;
+separator -style "none" -w 20;
+
+$buttonIrisSpecColorClear = `button -label "Reset" -en false ` ;
+button -edit -command ( "ResetIrisS " + $colorIrisSpec) $buttonIrisSpecColorClear;
+
+colorSliderGrp -edit -dc ("ChangeIrisSColor " + $colorIrisSpec) $colorIrisSpec ;
+setParent .. ;
+
+setParent .. ;
+separator -style "none" -h 50;
+
+//create final button and rig
+$buttonFinal = `button -label "Finalize and Create Rig" -en false`;
+button -edit -command "FinalRig" $buttonFinal ;
+
+
+button -edit -command ("CreateEyes " + $buttonCreateEyes + " " + $sliderX + " " + $sliderScale
+                        + " " + $sliderY + " " + $sliderZ + " " + $colorPupil
+                        + " " + $buttonPupilColorClear + " " + $colorIris
+                        + " " + $buttonIrisColorClear + " " + $colorIrisSpec
+                        + " " + $buttonIrisSpecColorClear + " " + $buttonFinal)  $buttonCreateEyes;
+
+
+
+//display the window
+showWindow EyeWindow;
+
+
+//procedure for creating eyes
+global proc CreateEyes (string $buttonCreateEyes, string $sliderX, string $sliderScale,
+                        string $sliderY, string $sliderZ, string $colorPupil,
+                        string $buttonPupilColorClear, string $colorIris,
+                        string $buttonIrisColorClear, string $colorIrisSpec,
+                        string $buttonIrisSpecColorClear, string $buttonFinal) {
+
+    //create the sphere and rotate it
+    polySphere -name Cornea_GEO -r 1 -sx 23 -sy 23 -ax 0 1 0 -cuv 2 -ch 1;
+    rotate -r -os -fo 90 0 0 ;
+
+    //modelling the cornea
+    select -r Cornea_GEO.vtx[507] ;
+    softSelect -softSelectEnabled true -ssd 0.76 -sud 0.5 ;
+
+    move -r 0 0 0.1 ;
+    softSelect -softSelectEnabled false ;
+
+    select -cl  ;
+
+
+    select -add Cornea_GEO.e[391:413] ;
+    scale -r -p 0.003cm -6e-08cm 0.78cm 0.93 0.93 0.93 ;
+
+    move -r 0 0 0.074 ;
+    select -cl  ;
+
+    select -add Cornea_GEO.e[460:482] ;
+    scale -r -p 0.001cm -1.5e-08cm 1.03cm 1.05 1.05 1.05 ;
+
+    select -cl  ;
+
+
+    select -add Cornea_GEO.e[437:459] ;
+    scale -r -p 0.0019cm -3e-08cm 0.97cm 1.03 1.03 1.03 ;
+
+    select -cl  ;
+
+    select -r Cornea_GEO.vtx[507] ;
+    move -r 0 0 -0.013 ;
+
+    select -cl  ;
+
+
+    select -r Cornea_GEO.vtx[483:505] Cornea_GEO.vtx[507] ;
+    move -r 0 0 -0.0189 ;
+
+    displaySmoothness -divisionsU 3 -divisionsV 3 -pointsWire 16 -pointsShaded 4 -polygonObject 3;
+
+    select -cl  ;
+
+    select -r Cornea_GEO.vtx[391:505] Cornea_GEO.vtx[507] ;
+    scale -r -p 0.003cm -5.97e-08cm 0.97cm 0.7 0.7 0.7 ;
+    move -r 0 0 -0.0037 ;
+
+    select -cl  ;
+
+
+    //modelling the iris
+    polyTorus -name Iris_GEO -r 1 -sr 0.5 -tw 0 -sx 13 -sy 13 -ax 0 1 0 -cuv 1 -ch 1;
+    rotate -r -os -fo 90 0 0 ;
+
+    scale -r 1 0.285 1 ;
+    select -add Iris_GEO.e[156:168] ;
+
+
+    softSelect -softSelectEnabled true -ssd 0.58 -sud 0.5 ;
+    move -r 0 0 -0.27 ;
+
+
+    softSelect -ssd 0.89 -sud 0.5 ;
+    move -r 0 0 -0.012 ;
+
+
+    move -r 0 0 0.0443 ;
+    softSelect -softSelectEnabled false ;
+
+    select -cl  ;
+
+
+    select -add Iris_GEO.e[52:64] ;
+    select -add Iris_GEO.e[65:77] ;
+
+    scale -r -p 0.02cm 2.86cm 0.114cm 1 0.314 1 ;
+    move -r 0 0 -0.02 ;
+
+    select -cl  ;
+
+    select -add Iris_GEO.e[0:12] ;
+    select -add Iris_GEO.e[13:25] ;
+    select -add Iris_GEO.e[156:168] ;
+
+    move -r 0 0 0.163 ;
+    select -cl  ;
+
+
+    select -add Iris_GEO.f[91:103] ;
+    select -add Iris_GEO.f[130:142] ;
+    select -add Iris_GEO.f[117:129] ;
+    select -add Iris_GEO.f[104:116] ;
+
+    doDelete;
+    select -cl  ;
+
+    select -add Iris_GEO.e[104:116] ;
+    move -r 0 0 0.182 ;
+
+    select -cl  ;
+
+    select -add Iris_GEO.e[26:38] ;
+    select -add Iris_GEO.e[39:51] ;
+
+    move -r 0 0 -0.056 ;
+    select -cl  ;
+
+    select -add Iris_GEO.e[52:64] ;
+    move -r 0 0 -0.0246 ;
+
+    select -cl  ;
+
+    select -r Iris_GEO ;
+
+    scale -r 0.187 0.187 0.187 ;
+    scale -r 1.64 1.64 1.64 ;
+    scale -r 0.884 0.884 0.884 ;
+
+
+
+    move -r 0 0 1.044 ;
+
+    select -cl  ;
+
+
+    //creating the pupil
+
+    polyCylinder -r 3 -h 2 -sx 10 -sy 1 -sz 1 -ax 0 0 1 -rcp 0 -cuv 3 -ch 1 -name Pupil_GEO;
+    scale -r 0.0801522 0.0801522 0.0801522 ;
+    move -r 0 0 0.701065 ;
+
+    select -cl;
+
+
+    //center pivot, delete history and freeze transformations
+    select -r Cornea_GEO ;
+    select -tgl Iris_GEO ;
+    select -tgl Pupil_GEO ;
+
+    CenterPivot;
+    DeleteHistory;
+
+    makeIdentity -apply true -t 1 -r 1 -s 1 -n 0 -pn 1;
+
+    //assign material to cornea
+    shadingNode -asShader standardSurface -name Cornea;
+    $corneaSG = `sets -renderable true -noSurfaceShader true -empty -name standardSurfaceCorneaSG`;
+
+    connectAttr -f Cornea.outColor standardSurfaceCorneaSG.surfaceShader;
+    assignCreatedShader "standardSurface" "" Cornea "Cornea_GEO";
+
+    sets -e -forceElement $corneaSG;
+
+    //assign ramp to cornea
+    shadingNode -asTexture ramp -name rampCornea;
+    shadingNode -asUtility place2dTexture -name texCornea;
+
+    connectAttr texCornea.outUV rampCornea.uv;
+    connectAttr texCornea.outUvFilterSize rampCornea.uvFilterSize;
+
+    connectAttr -force rampCornea.outAlpha Cornea.transmission;
+
+    setAttr "rampCornea.colorEntryList[1].position" 0.955357;
+    setAttr "rampCornea.colorEntryList[0].position" 0.797619;
+
+    setAttr "rampCornea.colorEntryList[0].color" -type double3 0 0 0 ;
+    setAttr "rampCornea.colorEntryList[1].color" -type double3 1 1 1 ;
+
+    //texturing the iris
+    shadingNode -asShader standardSurface -name Iris;
+    $irisSG = `sets -renderable true -noSurfaceShader true -empty -name standardSurfaceIrisSG`;
+
+    connectAttr -f Iris.outColor standardSurfaceIrisSG.surfaceShader;
+    assignCreatedShader "standardSurface" "" Iris "Iris_GEO";
+
+    sets -e -forceElement standardSurfaceIrisSG;
+
+    setAttr "Iris.baseColor" -type double3 0.0721 0.1623 0.3344 ;
+    setAttr "Iris.specularRoughness" 0.429487;
+    setAttr "Iris.specularColor" -type double3 0.130032 0.292334 0.602 ;
+
+    //texturing the pupil
+
+    shadingNode -asShader standardSurface -name Pupil;
+    sets -renderable true -noSurfaceShader true -empty -name standardSurfacePupil;
+
+    connectAttr -f Pupil.outColor standardSurfacePupil.surfaceShader;
+
+    assignCreatedShader "standardSurface" "" Pupil "Pupil_GEO";
+    sets -e -forceElement standardSurfacePupil;
+
+    setAttr "Pupil.baseColor" -type double3 0.0216 0.0076 0.0042 ;
+
+    spaceLocator -p 0 0 0 -name L_Eye;
+    scale -r 2 2 2 ;
+
+    //duplicating for right eye
+    duplicate Pupil_GEO  Iris_GEO Cornea_GEO L_Eye;
+
+    //grouping and renaming
+    parent Pupil_GEO Iris_GEO ;
+    parent Iris_GEO Cornea_GEO ;
+
+    parent Pupil_GEO1 Iris_GEO1 ;
+    parent Iris_GEO1 Cornea_GEO1 ;
+
+    rename "Cornea_GEO" "L_Cornea_GEO";
+    rename "Iris_GEO" "L_Iris_GEO";
+    rename "Pupil_GEO" "L_Pupil_GEO";
+
+    rename "Cornea_GEO1" "R_Cornea_GEO";
+    rename "Iris_GEO1" "R_Iris_GEO";
+    rename "Pupil_GEO1" "R_Pupil_GEO";
+    rename "L_Eye1" "R_Eye";
+
+
+    parent L_Cornea_GEO L_Eye;
+    setAttr "L_Eye.translateX" -3;
+
+    parent R_Cornea_GEO R_Eye;
+    setAttr "R_Eye.translateX" 3;
+
+    select -cl;
+
+    group -em -name Eye;
+
+    parent L_Eye Eye;
+    parent R_Eye Eye;
+
+    select -cl;
+
+    select -r L_Eye ;
+    select -tgl R_Eye ;
+
+    CenterPivot;
+
+    makeIdentity -apply true -t 1 -r 1 -s 1 -n 0 -pn 1;
+
+    select -cl;
+    //disable create button
+    button -edit -en false $buttonCreateEyes ;
+
+    //enable sliders
+    floatSliderGrp -edit -en true $sliderX;
+    floatSliderGrp -edit -en true $sliderScale;
+    floatSliderGrp -edit -en true $sliderY;
+    floatSliderGrp -edit -en true $sliderZ;
+
+    //enable color
+    colorSliderGrp -edit -en true $colorPupil;
+    button -edit -en true $buttonPupilColorClear;
+
+    colorSliderGrp -edit -en true $colorIris;
+    button -edit -en true $buttonIrisColorClear;
+
+    colorSliderGrp -edit -en true $colorIrisSpec;
+    button -edit -en true $buttonIrisSpecColorClear;
+
+    //enable final color
+
+    button -edit -en true $buttonFinal ;
+
+}
+
+
+//procedure for changing distance between eyes
+global proc ChangeDistance (string $sliderX )
+{
+    float $val = `floatSliderGrp -q -value $sliderX` ;
+    setAttr "L_Eye.translateX" ($val * -1);
+    setAttr "R_Eye.translateX" $val;
+
+}
+
+
+//procedure for changing scale
+global proc ChangeScale (string $sliderScale )
+{
+    float $val = `floatSliderGrp -q -value $sliderScale` ;
+    setAttr "L_Eye.scaleX" $val;
+    setAttr "L_Eye.scaleY" $val;
+    setAttr "L_Eye.scaleZ" $val;
+
+    setAttr "R_Eye.scaleX" $val;
+    setAttr "R_Eye.scaleY" $val;
+    setAttr "R_Eye.scaleZ" $val;
+
+}
+
+//procedure for changing Y location
+global proc ChangeY (string $sliderY )
+{
+    float $val = `floatSliderGrp -q -value $sliderY` ;
+    setAttr "L_Eye.translateY" $val;
+    setAttr "R_Eye.translateY" $val;
+
+}
+
+//procedure for changing Z location
+global proc ChangeZ (string $sliderZ )
+{
+    float $val = `floatSliderGrp -q -value $sliderZ` ;
+    setAttr "L_Eye.translateZ" $val;
+    setAttr "R_Eye.translateZ" $val;
+
+}
+
+//procedure for changing Pupil Color
+global proc ChangePupilColor (string $pupilColor)
+{
+    float $colors[] = `colorSliderGrp -q-rgb $pupilColor`  ;
+
+    setAttr "Pupil.baseColor" -type float3 $colors[0] $colors[1] $colors[2] ;
+
+}
+
+//procedure for resetting pupil color
+global proc ResetPupil (string $pupilColor)
+{
+    setAttr "Pupil.baseColor" -type double3 0.0216 0.0076 0.0042 ;
+
+    colorSliderGrp -edit -rgb 0.022 0.008 0.004 $pupilColor  ;
+}
+
+//procedure for changing Iris Color
+global proc ChangeIrisColor (string $IrisColor)
+{
+    float $colors[] = `colorSliderGrp -q-rgb $IrisColor`  ;
+
+    setAttr "Iris.baseColor" -type float3 $colors[0] $colors[1] $colors[2] ;
+
+}
+
+//procedure for resetting iris color
+global proc ResetIrisC (string $IrisColor)
+{
+    setAttr "Iris.baseColor" -type double3 0.0721 0.1623 0.3344 ;
+
+    colorSliderGrp -edit -rgb 0.072 0.162 0.334  $IrisColor ;
+}
+
+//procedure for changing Iris Color
+global proc ChangeIrisSColor (string $IrisSColor)
+{
+    float $colors[] = `colorSliderGrp -q-rgb $IrisSColor`  ;
+
+    setAttr "Iris.specularColor" -type float3 $colors[0] $colors[1] $colors[2] ;
+
+}
+
+//Reset Iris specular color
+global proc ResetIrisS (string $IrisSColor)
+{
+    setAttr "Iris.specularColor" -type double3 0.130032 0.292334 0.602 ;
+
+    colorSliderGrp -edit -rgb 0.130 0.292 0.602   $IrisSColor ;
+}
+
+//final rig
+global proc FinalRig()
+{
+    deleteUI EyeWindow;
+    spaceLocator -p 0 0 5 -name "EYE_CTRL" ;
+
+    xform -cpc EYE_CTRL;
+
+    shadingNode -asUtility multDoubleLinear -name mdl_TransX ;
+    connectAttr -force EYE_CTRL.translateX mdl_TransX.input1 ;
+
+    addAttr -ln "YRotationSpeed" -at "float" -dv 4 -min 0.1 EYE_CTRL;
+
+    connectAttr -force EYE_CTRL.YRotationSpeed mdl_TransX.input2  ;
+
+    shadingNode -asUtility setRange -name X_CONST;
+
+
+    connectAttr -force mdl_TransX.output X_CONST.valueX;
+
+    addAttr -ln "EyeRotateYMin" -at "float" -dv -45 -max 0 EYE_CTRL;
+    addAttr -ln "EyeRotateYMax" -at "float" -dv 45 -min 0 EYE_CTRL;
+
+    connectAttr -force EYE_CTRL.EyeRotateYMin X_CONST.minX  ;
+    connectAttr -force EYE_CTRL.EyeRotateYMin X_CONST.oldMinX  ;
+
+    connectAttr -force EYE_CTRL.EyeRotateYMax X_CONST.maxX  ;
+    connectAttr -force EYE_CTRL.EyeRotateYMax X_CONST.oldMaxX  ;
+
+    connectAttr -force X_CONST.outValueX L_Eye.rotateY ;
+    connectAttr -force X_CONST.outValueX R_Eye.rotateY ;
+
+    //y range value to x rotation
+    shadingNode -asUtility multDoubleLinear -name mdl_TransY ;
+    connectAttr -force EYE_CTRL.translateY mdl_TransY.input1 ;
+
+
+    addAttr -ln "XRotationSpeed" -at "float" -dv -4 -max -0.1 EYE_CTRL;
+
+    connectAttr -force EYE_CTRL.XRotationSpeed mdl_TransY.input2  ;
+
+    connectAttr -force mdl_TransY.output X_CONST.valueY;
+
+    addAttr -ln "EyeRotateXMin" -at "float" -dv -45 -max 0 EYE_CTRL;
+    addAttr -ln "EyeRotateXMax" -at "float" -dv 45 -min 0 EYE_CTRL;
+
+    connectAttr -force EYE_CTRL.EyeRotateXMin X_CONST.minY  ;
+    connectAttr -force EYE_CTRL.EyeRotateXMin X_CONST.oldMinY  ;
+
+    connectAttr -force EYE_CTRL.EyeRotateXMax X_CONST.maxY  ;
+    connectAttr -force EYE_CTRL.EyeRotateXMax X_CONST.oldMaxY  ;
+
+    connectAttr -force X_CONST.outValueY L_Eye.rotateX ;
+    connectAttr -force X_CONST.outValueY R_Eye.rotateX ;
+}
+
+//procedure to delete if created earlier
+global proc DeleteCreated()
+{
+
+    if (`objExists Eye` == true)
+        delete Eye;
+
+    if (`objExists EYE_CTRL` == true)
+        delete EYE_CTRL;
+
+    catch (eval("delete Cornea"));
+    catch (eval("delete standardSurfaceCorneaSG"));
+
+    catch (eval("delete rampCornea"));
+    catch (eval("delete texCornea"));
+
+    catch (eval("delete Iris"));
+    catch (eval("delete standardSurfaceIrisSG"));
+
+    catch (eval("delete Pupil"));
+    catch (eval("delete standardSurfacePupil"));
+
+    print("***** Ignore the errors. *****");
+
+
+}
