@@ -47,22 +47,22 @@ to control the location and rotation of all the wheels as well as individually c
 <br />
  <br />
 
-<img src="readme-images/wheelsCreator.JPG" alt="Wheels Creator" >
+<img src="readme-images/wheelscreator.JPG" alt="Wheels Creator" >
 
 <br />
  <br />
 
-<img src="readme-images/wheelsCreator1.JPG" alt="Wheels Creator" >
+  <img src="readme-images/wheelscreator1.JPG" alt="Wheels Creator" >
 
 <br />
  <br />
 
-<img src="readme-images/wheelsCreator2.JPG" alt="Wheels Creator" >
+<img src="readme-images/wheelscreator2.JPG" alt="Wheels Creator" >
 
 <br />
  <br />
 
-<img src="readme-images/wheelsCreator3.JPG" alt="Final Result" >
+<img src="readme-images/wheelscreator3.JPG" alt="Final Result" >
 
 <br />
 
