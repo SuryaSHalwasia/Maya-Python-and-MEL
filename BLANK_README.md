@@ -34,7 +34,7 @@ the objects can be grouped based on the type or suffix/prefix.
 <br />
  <br />
 
-<img src="readme-images/RenamerSorter.jpg" alt="Renamer/Sorter" >
+<img src="readme-images/RenamerSorter.JPG" alt="Renamer/Sorter" >
 
 <br />
 
@@ -47,22 +47,22 @@ to control the location and rotation of all the wheels as well as individually c
 <br />
  <br />
 
-<img src="readme-images/wheelsCreator.jpg" alt="Wheels Creator" >
+<img src="readme-images/wheelsCreator.JPG" alt="Wheels Creator" >
 
 <br />
  <br />
 
-<img src="readme-images/wheelsCreator1.jpg" alt="Wheels Creator" >
+<img src="readme-images/wheelsCreator1.JPG" alt="Wheels Creator" >
 
 <br />
  <br />
 
-<img src="readme-images/wheelsCreator2.jpg" alt="Wheels Creator" >
+<img src="readme-images/wheelsCreator2.JPG" alt="Wheels Creator" >
 
 <br />
  <br />
 
-<img src="readme-images/wheelsCreator3.jpg" alt="Final Result" >
+<img src="readme-images/wheelsCreator3.JPG" alt="Final Result" >
 
 <br />
 
@@ -74,12 +74,12 @@ rotation, scale as well as other created attributes.
 <br />
  <br />
 
-<img src="readme-images/AttributesConnector.jpg" alt="Attributes Connector" >
+<img src="readme-images/AttributesConnector.JPG" alt="Attributes Connector" >
 
 <br />
  <br />
 
-<img src="readme-images/AttributesConnector1.jpg" alt="Attributes Connector" >
+<img src="readme-images/AttributesConnector1.JPG" alt="Attributes Connector" >
 
 <br />
 
@@ -91,12 +91,12 @@ presets.
 <br />
  <br />
 
-<img src="readme-images/light.jpg" alt="Light Manager" >
+<img src="readme-images/light.JPG" alt="Light Manager" >
 
 <br />
  <br />
 
-<img src="readme-images/light1.jpg" alt="Light Manager" >
+<img src="readme-images/light1.JPG" alt="Light Manager" >
 
 <br />
 
@@ -109,17 +109,17 @@ the rotation of the eyeball.
 <br />
  <br />
 
-<img src="readme-images/EyeCreator3.jpg" alt="Eye Creator" >
+<img src="readme-images/EyeCreator3.JPG" alt="Eye Creator" >
 
 <br />
  <br />
 
-<img src="readme-images/EyeCreator1.jpg" alt="Eye Creator" >
+<img src="readme-images/EyeCreator1.JPG" alt="Eye Creator" >
 
 <br />
  <br />
 
-<img src="readme-images/EyeCreator2.jpg" alt="Eye Creator" >
+<img src="readme-images/EyeCreator2.JPG" alt="Eye Creator" >
 <br />
 
 #### 6. FK IK Chains Creator
@@ -130,22 +130,22 @@ as the binding joints.
 <br />
  <br />
 
-<img src="readme-images/RigChains.jpg" alt="Rig Chains" >
+<img src="readme-images/RigChains.JPG" alt="Rig Chains" >
 
 <br />
  <br />
 
-<img src="readme-images/RigChains2.jpg" alt="Rig Chains" >
+<img src="readme-images/RigChains2.JPG" alt="Rig Chains" >
 
 <br />
  <br />
 
-<img src="readme-images/RigChains0.jpg" alt="Rig Chains" >
+<img src="readme-images/RigChains0.JPG" alt="Rig Chains" >
 
 <br />
  <br />
 
-<img src="readme-images/RigChains1.jpg" alt="Result" >
+<img src="readme-images/RigChains1.JPG" alt="Result" >
 <br />
 <br />
 
@@ -156,6 +156,6 @@ Also, it displays the saved prefab with a screenshot for visual purposes.
 <br />
  <br />
 
-<img src="readme-images/PrefabManager.jpg" alt="Result" >
+<img src="readme-images/PrefabManager.JPG" alt="Result" >
 <br />
 
