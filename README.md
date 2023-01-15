@@ -35,7 +35,7 @@ the objects can be grouped based on the type or suffix/prefix.
 <br />
  <br />
 
-<img src="./readme-images/RenamerSorter.JPG" alt="Renamer/Sorter" >
+![RenamerSorter](https://www.dropbox.com/s/upptqwhfv5tv7io/RenamerSorter.JPG?dl=0)
 
 <br />
 
