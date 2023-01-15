@@ -133,22 +133,23 @@ as the binding joints.
 <br />
  <br />
 
-<img src="readme-images/RigChains.JPG" alt="Rig Chains" >
+![Rig Chains](https://static.wixstatic.com/media/4d9930_5ae43648d5b5400ebee8c5583ba2bdc5~mv2.jpg/v1/fill/w_439,h_558,al_c,q_80,enc_auto/RigChains_JPG.jpg)
 
 <br />
  <br />
 
-<img src="readme-images/RigChains2.JPG" alt="Rig Chains" >
+![Rig Chains](https://static.wixstatic.com/media/4d9930_047e3f6fec834de0b94c47e4d19692b2~mv2.jpg/v1/fill/w_439,h_558,al_c,q_80,enc_auto/4d9930_047e3f6fec834de0b94c47e4d19692b2~mv2.jpg)
 
 <br />
  <br />
 
-<img src="readme-images/RigChains0.JPG" alt="Rig Chains" >
+![Rig Chains](https://static.wixstatic.com/media/4d9930_223820b86e6d45829f3636d9df30d41d~mv2.jpg/v1/fill/w_600,h_313,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/4d9930_223820b86e6d45829f3636d9df30d41d~mv2.jpg)
 
 <br />
  <br />
 
-<img src="readme-images/RigChains1.JPG" alt="Result" >
+![Rig Chains](https://static.wixstatic.com/media/4d9930_31aeb060ba7a4aedaf02bc6963cb5bed~mv2.jpg/v1/fill/w_600,h_310,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/4d9930_31aeb060ba7a4aedaf02bc6963cb5bed~mv2.jpg)
+
 <br />
 <br />
 
@@ -159,5 +160,6 @@ Also, it displays the saved prefab with a screenshot for visual purposes.
 <br />
  <br />
 
-<img src="readme-images/PrefabManager.JPG" alt="Result" >
+![Prefab Manager](https://static.wixstatic.com/media/4d9930_521256fa26c040e0880a67c8addf4b3c~mv2.jpg/v1/fill/w_287,h_340,al_c,q_80,enc_auto/PrefabManager_JPG.jpg)
+
 <br />
