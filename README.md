@@ -35,7 +35,7 @@ the objects can be grouped based on the type or suffix/prefix.
 <br />
  <br />
 
-![RenamerSorter](https://drive.google.com/file/d/11L9gcpjm9UhJ6BJWYCqPgM2xUVd69oZN/view?usp=sharing)
+![RenamerSorter](https://sfconservancy.org/img/GiveUpGitHub.png)
 
 <br />
 
