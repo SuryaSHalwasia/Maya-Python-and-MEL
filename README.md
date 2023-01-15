@@ -94,12 +94,12 @@ presets.
 <br />
  <br />
 
-<img src="readme-images/light.JPG" alt="Light Manager" >
+![Light Manager](https://static.wixstatic.com/media/4d9930_ffa968453b2c490587745a6998a82fe3~mv2.jpg/v1/fill/w_452,h_656,al_c,q_80,enc_auto/light_JPG.jpg)
 
 <br />
  <br />
 
-<img src="readme-images/light1.JPG" alt="Light Manager" >
+![Light Manager](https://static.wixstatic.com/media/4d9930_074a422846db41549f3a2697d17c61ab~mv2.jpg/v1/fill/w_413,h_600,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/4d9930_074a422846db41549f3a2697d17c61ab~mv2.jpg)
 
 <br />
 
@@ -112,17 +112,17 @@ the rotation of the eyeball.
 <br />
  <br />
 
-<img src="readme-images/EyeCreator3.JPG" alt="Eye Creator" >
+![Eye Creator](https://static.wixstatic.com/media/4d9930_849933dc6f474458859e74166e1a9dfc~mv2.jpg/v1/fill/w_544,h_659,al_c,q_80,enc_auto/EyeCreator3_JPG.jpg)
 
 <br />
  <br />
 
-<img src="readme-images/EyeCreator1.JPG" alt="Eye Creator" >
+![Eye Creator](https://static.wixstatic.com/media/4d9930_d240dfc4b3124d028419936552fcec17~mv2.jpg/v1/fill/w_600,h_309,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/4d9930_d240dfc4b3124d028419936552fcec17~mv2.jpg)
 
 <br />
  <br />
 
-<img src="readme-images/EyeCreator2.JPG" alt="Eye Creator" >
+![Result](https://static.wixstatic.com/media/4d9930_10d642e1fc78486181df6968516204fd~mv2.jpg/v1/fill/w_600,h_308,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/4d9930_10d642e1fc78486181df6968516204fd~mv2.jpg)
 <br />
 
 #### 6. FK IK Chains Creator
