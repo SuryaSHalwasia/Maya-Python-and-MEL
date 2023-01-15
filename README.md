@@ -35,7 +35,7 @@ the objects can be grouped based on the type or suffix/prefix.
 <br />
  <br />
 
-![RenamerSorter](https://images.pexels.com/photos/1996333/pexels-photo-1996333.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+![RenamerSorter](https://static.wixstatic.com/media/84770f_98c3dfee94e74a9791af840ab742a6d8~mv2_d_1920_1430_s_2.jpg/v1/fill/w_580,h_634,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/84770f_98c3dfee94e74a9791af840ab742a6d8~mv2_d_1920_1430_s_2.jpg)
 
 <br />
 
