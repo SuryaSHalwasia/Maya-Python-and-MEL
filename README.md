@@ -60,8 +60,7 @@ to control the location and rotation of all the wheels as well as individually c
  <br />
  
  
-![Wheels Creator]
-(https://static.wixstatic.com/media/4d9930_4b1681f582b54da98a02040fe948f171~mv2.jpg/v1/fill/w_600,h_307,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/4d9930_4b1681f582b54da98a02040fe948f171~mv2.jpg)
+![Wheels Creator](https://static.wixstatic.com/media/4d9930_4b1681f582b54da98a02040fe948f171~mv2.jpg/v1/fill/w_600,h_307,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/4d9930_4b1681f582b54da98a02040fe948f171~mv2.jpg)
 
 <br />
  <br />
