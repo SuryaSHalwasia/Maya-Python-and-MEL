@@ -75,7 +75,7 @@ rotation, scale as well as other created attributes.
 <br />
  <br />
 
-<img src="readme-images/AttributesConnector.JPG" alt="Attributes Connector" >
+<img src="[readme-images/AttributesConnector.JPG](https://github.com/SuryaSHalwasia/Maya-Python-and-MEL/blob/main/readme-images/AttributesConnector.JPG)" alt="Attributes Connector" >
 
 <br />
  <br />
