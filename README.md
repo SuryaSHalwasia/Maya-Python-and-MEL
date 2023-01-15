@@ -65,7 +65,7 @@ to control the location and rotation of all the wheels as well as individually c
 <br />
  <br />
 
-<img src="readme-images/wheelscreator3.JPG" alt="Final Result" >
+![Final Result](https://static.wixstatic.com/media/4d9930_d689cef9470e4b55b07766114913c81e~mv2.jpg/v1/fill/w_600,h_309,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/4d9930_d689cef9470e4b55b07766114913c81e~mv2.jpg)
 
 <br />
 
@@ -77,12 +77,12 @@ rotation, scale as well as other created attributes.
 <br />
  <br />
 
-<img src="[readme-images/AttributesConnector.JPG](https://github.com/SuryaSHalwasia/Maya-Python-and-MEL/blob/main/readme-images/AttributesConnector.JPG)" alt="Attributes Connector" >
+![Attributes Connector](https://static.wixstatic.com/media/4d9930_eae259c72c384853ad66a0f4c287e041~mv2.jpg/v1/fill/w_525,h_521,al_c,q_80,enc_auto/AttributesConnector_JPG.jpg)
 
 <br />
  <br />
 
-<img src="readme-images/AttributesConnector1.JPG" alt="Attributes Connector" >
+![Attributes Connector](https://static.wixstatic.com/media/4d9930_fde23cb8ea784cdfa256f5a67a96ea8f~mv2.jpg/v1/fill/w_600,h_483,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/4d9930_fde23cb8ea784cdfa256f5a67a96ea8f~mv2.jpg)
 
 <br />
 
