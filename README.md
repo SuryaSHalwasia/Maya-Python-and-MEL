@@ -48,17 +48,17 @@ to control the location and rotation of all the wheels as well as individually c
 <br />
  <br />
 
-<img src="readme-images/wheelscreator.JPG" alt="Wheels Creator" >
+![Wheels Creator](https://static.wixstatic.com/media/4d9930_83145f7064b1490baa9318ef5ae1596b~mv2.jpg/v1/fill/w_458,h_396,al_c,q_80,enc_auto/wheelscreator_JPG.jpg)
 
 <br />
  <br />
 
-  <img src="readme-images/wheelscreator1.JPG" alt="Wheels Creator" >
+  ![Wheels Creator](https://static.wixstatic.com/media/4d9930_f46f29f8f2a44b7db5d4d1db75a47625~mv2.jpg/v1/fill/w_600,h_307,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/4d9930_f46f29f8f2a44b7db5d4d1db75a47625~mv2.jpg)
 
 <br />
  <br />
-
-<img src="readme-images/wheelscreator2.JPG" alt="Wheels Creator" >
+![Wheels Creator]
+(https://static.wixstatic.com/media/4d9930_4b1681f582b54da98a02040fe948f171~mv2.jpg/v1/fill/w_600,h_307,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/4d9930_4b1681f582b54da98a02040fe948f171~mv2.jpg)
 
 <br />
  <br />
