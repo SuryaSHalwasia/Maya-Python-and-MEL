@@ -35,7 +35,7 @@ the objects can be grouped based on the type or suffix/prefix.
 <br />
  <br />
 
-![RenamerSorter](https://sfconservancy.org/img/GiveUpGitHub.png)
+![RenamerSorter]()
 
 <br />
 
